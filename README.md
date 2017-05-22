@@ -1,1 +1,21 @@
 # zentao
+http://www.zentao.net/
+
+docker-compose.yml:
+services:
+  zentao:
+    image: hofmann/zentao
+    restart: always
+    networks:
+      frontend_zentao:
+      backend_zentao:
+    volumes:
+      - volume_zentao_data:/opt/zbox
+
+
+networks:
+  frontend_zentao:
+  backend_zentao:
+
+volumes:
+  volume_zentao_data:
